@@ -9,7 +9,7 @@ def get_all(start_point):
 def stored_data():
     all_tds=[]
     get=1
-    while get<62:
+    while get<200:
         get_page=get_all(get)
         for td in get_page.select('td'):
             all_tds.append(td.text)

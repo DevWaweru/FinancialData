@@ -37,8 +37,28 @@ class Market(models.Model):
     def get_earners_by_country(cls, country, date):
         portfolios = Market.objects.filter(country=country, date__date=date).order_by('-change')[:10]
         return portfolios
+    
+    @classmethod
+    def get_by_sector(cls, sector, date):
+        portfolios = Market.objects.filter(sector=sector, date__date=date)
+        return portfolios
+
+    @classmethod
+    def get_earners_by_sector(cls, sector, date):
+        portfolios = Market.objects.filter(sector=sector, date__date=date).order_by('-change')[:10]
+        return portfolios
 
     @classmethod
     def get_today(cls, date):
         portfolios = Market.objects.filter(date__date=date)
+        return portfolios
+    
+    @classmethod
+    def get_by_ticker(cls, ticker):
+        portfolios = Market.objects.filter(ticker=ticker).order_by('-date')
+        return portfolios
+    
+    @classmethod
+    def get_by_ticker_date(cls, company, date):
+        portfolios = Market.objects.get(ticker=company, date__date=date)
         return portfolios

@@ -20,10 +20,23 @@
                     {% endfor %}
                 </div>
             </li>
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Sectors
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for sector in sectors %}
+                    <a class="dropdown-item" href="{% url 'sector' sector=sector %}">{{sector}}</a>
+                    {% empty %}
+                    <a class="dropdown-item" href="#">No countries available</a>                    
+                    {% endfor %}
+                </div>
+            </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
             <li class="nav-item active mr-sm-2">
-                <a class="nav-link" href="#">Donate</a>
+                <p class="nav-link">View more at <a style="color: rgb(77, 156, 221);" href="https://www.finviz.com" target="_blank">Finviz</a></p> 
             </li>
         </ul>
     </div>

@@ -5,7 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url('^$', views.home, name='home'),
-    url(r'^(?P<country>\w+)/$', views.country, name='country'),
+    url(r'^country/(?P<country>\w+)/$', views.country, name='country'),
+    url(r'^company/(?P<company>\w+)/$', views.single_company, name='company'),
+    url(r'^sector/(?P<sector>\w+)/$', views.sector, name='sector')
 ]
 
 if settings.DEBUG:
