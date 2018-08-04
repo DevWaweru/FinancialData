@@ -3,7 +3,7 @@ from .required_data import stock_data
 from .models import Market
 import json
 from threading import Timer
-from datetime import time,date
+from datetime import time,date, timedelta
 # Drawing graphs on the chart
 from .fusioncharts import FusionCharts
 
@@ -17,7 +17,7 @@ def home(request):
         single_portfolio = Market.get_all().last()
         day = single_portfolio.date.date()
     except:
-        pass
+        day = get_day-timedelta(days=1)
     
     if day == get_day:
         pass
