@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url('^$', views.home, name='home'),
+    url(r'^(?P<country>\w+)/$', views.country, name='country'),
 ]
 
 if settings.DEBUG:

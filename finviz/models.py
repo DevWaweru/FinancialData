@@ -19,3 +19,18 @@ class Market(models.Model):
     def get_all(cls):
         portfolios = Market.objects.all()
         return portfolios
+    
+    @classmethod
+    def get_top_earners(cls):
+        earners = Market.objects.order_by('-change')[:10]
+        return earners
+    
+    @classmethod
+    def get_by_country(cls, country):
+        portfolios = Market.objects.filter(country=country)
+        return portfolios
+
+    @classmethod
+    def get_earners_by_country(cls, country):
+        portfolios = Market.objects.filter(country=country).order_by('-change')[:10]
+        return portfolios
