@@ -19,7 +19,7 @@
             <div id="chart-1">{{ output|safe }}</div>
         </div>
         <div class="col-md-6">
-            <h2 class="text-center">Top Earners</h2>
+            <h2 class="text-center">Top Earner(s)</h2>
             <table class="table">
                 <thead>
                     <tr>
@@ -32,21 +32,21 @@
                 </thead>
                 <tbody>
                     {% for earner in earners %}
-                    <tr>
-                        <td> {{earner.company}} </td>
-                        <td> {{earner.sector}} </td>
-                        <td> {{earner.industry}} </td>
-                        <td> {{earner.country}} </td>
                         {% if earner.change > 0 %}
-                        <td style="color: green;"> {{earner.change}}%</td>
-                        {% else %}
-                        <td style="color: red;"> {{earner.change}}%</td>
+                        <tr>
+                            <td> {{earner.company}} </td>
+                            <td> {{earner.sector}} </td>
+                            <td> {{earner.industry}} </td>
+                            <td> {{earner.country}} </td>
+                            {% if earner.change > 0 %}
+                            <td style="color: green;"> {{earner.change}}%</td>
+                            {% endif %}
+                        </tr>
                         {% endif %}
-                    </tr>
-                    {% empty %}
-                    <tr>
-                        We have no portfolios yet
-                    </tr>
+                        {% empty %}
+                        <tr>
+                            No earners today
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>

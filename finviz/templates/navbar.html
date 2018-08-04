@@ -20,32 +20,6 @@
                     {% endfor %}
                 </div>
             </li>
-            <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Sector
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {% for sector in sectors %}
-                    <a class="dropdown-item" href="#">{{sector}}</a>
-                    {% empty %}
-                    <a class="dropdown-item" href="#">No sectors available</a>                    
-                    {% endfor %}
-                </div>
-            </li>
-            <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Industry
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {% for industry in industries %}
-                    <a class="dropdown-item" href="#">{{industry}}</a>
-                    {% empty %}
-                    <a class="dropdown-item" href="#">No industries available</a>                    
-                    {% endfor %}
-                </div>
-            </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
             <li class="nav-item active mr-sm-2">
