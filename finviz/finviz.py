@@ -15,7 +15,8 @@ def simple_get(url):
             else:
                 return None
     except RequestException as e:
-        log_error(f'Error when doing GET request to {url}:{str(e)}')
+        e_string = str(e)
+        log_error(f'Error when doing GET request to {url}:{e_string}')
         return None
     
 def good_response(resp):
